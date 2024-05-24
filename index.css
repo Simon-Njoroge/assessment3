@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: gray;
+    color: white;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    margin: 2em 4em;
+    padding: 1em;
+    background-color: green;
+}
+.searching{
+    display: flex;
+    justify-content: space-between;;
+    margin: 2em 4em;
+}
+.searchbar input::placeholder{
+    color: #ff0000;
+}
+.searchbar{
+    background-color: white;
+    padding: 10px;
+    width: 400px;
+    border-radius: 10px;
+    
+}
+.searchbar input{
+    border: none;
+    outline: none;
+    font-size: 20px;
+}
+.countries{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    padding: 1em 3em;
+    /* margin: 2em 4em; */
+}
+.county{
+    padding: 10px;
+    border:1px solid green ;
+}
+.onoff img{
+    padding-right: 10px;
+}
+.light{
+    background-color: white;
+    color: black;
+}
+.light .navbar{
+    background-color: aqua;
+}
+.light .searchbar{
+    background-color: black;
+}
+.light .searchbar input{
+    background-color: black;;
+}
+@media only screen and (max-width: 768px){
+    .navbar{
+        display: block;;
+        margin: 5px 5px;
+    }
+    .searching{
+        display: block;;
+        margin: .5em 10px;
+    }
+}
