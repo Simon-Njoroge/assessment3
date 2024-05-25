@@ -1,71 +1,69 @@
-
-const dark =document.querySelector(".onoff")
-const background=document.querySelector("body")
-dark.addEventListener('click',turnon);
-function turnon(){
-      if(dark.src.includes("download.png")){
-            dark.src="./images/sunicon.png";
-            background.classList.toggle("white")
-           }
-           else{
-            dark.src="./images/download.png";
-           
-           }
+const dark = document.querySelector(".onoff img");
+dark.addEventListener("click", darklight);
+function darklight(){
+    if(dark.src.includes("download.png")){
+        dark.src = "./images/sunicon.png";
+        document.body.classList.toggle("light");
+    }
+    else{
+        dark.src="./images/download.png";
+    }
 }
-const image1= document.getElementsByClassName("image1");
-const county =document.getElementById("country")
-const pop1=document.getElementById("population1")
-const region1=document.getElementById("region1")
-const capital1=document.getElementById("capital1")
- async function fetchdata(){
-    await fetch("http://localhost:3000/1")
-    .then( (response) => response.json())
+const county = document.querySelector(".countries");
+function fetchdata(){
+    fetch("https://restcountries.com/v3.1/all")
+    .then(res => res.json())
     .then(data => {
-          image1.textContent=data.flags.png;
-          county.textContent=data.name;
-          pop1.textContent=data.population;
-          region1.textContent=data.region
-          capital1.textContent=data.capital
-          console.log(data);
+        data.forEach(country => {
+          const div = document.createElement('div');
+          div.classList.add('county')
+
+          const img = document.createElement("div")
+          img.classList.add("image");
+          img.innerHTML = `<img src="${country.flags.png}" alt="">`
+         
+          const cdata = document.createElement("div")
+          cdata.classList.add("county");
+
+          cdata.innerHTML =`
+          <h3>${country.name.common}</h3>
+          <p>Population: ${country.population}</p>
+          <p>Region: ${country.region}</p>
+          <p>Capital: ${country.capital}</p>
+          `
+          div.append(img);
+          div.append(cdata);
+          county.append(div);
+        })
     })
-    .catch(error=>console.log(error))
 }
+
 fetchdata();
-const county2= document.getElementById("country1")
-const pop=document.getElementById("population")
-const region =document.getElementById("region")
-const capital=document.getElementById("capital")
+// const county = document.querySelector(".countries");
+// function fetchdata(){
+//     fetch('data.json')
+//     .then(res => res.json())
+//     .then( data => {
+//      data.forEach(value => {
+//         const div = document.createElement("div")
+//         div.classList.add('county')
+//         const img =document.createElement('div')
+//         div.classList.add('img')
+//         img.innerHTML=`<img src="${value.flags.png}" alt="" >`
+//         const userdata = document.createElement('div')
+//         userdata.classList.add('county');
+//         userdata.innerHTML=`
+//         <h3>${value.name}</h3>
+//         <p> population ${value.population}</p>
+//         <p> region ${value.region}</p>
+//          <p> capital ${value.capital}</p>
+//         `
+//         div.append(img)
+//         div.append(userdata)
+//         county.append(div)
+//      })
+//      .catch(error => console.error(error))
+//     })
 
-async function fetchdata2(){
-      await fetch("http://localhost:3000/0")
-      .then( (response) => response.json())
-      .then(data => {
-            image1.textContent=data.flags;
-            county2.textContent=data.name;
-            pop.textContent=data.population;
-            region.textContent=data.region;
-            capital.textContent=data.capital
-            console.log(data);
-      })
-      .catch(error=>console.log(error))
-  }
-  fetchdata2();
-  const county3= document.getElementById("country2")
-const pop2=document.getElementById("population2")
-const region2=document.getElementById("region2")
-const capital2=document.getElementById("capital2")
-
-async function fetchdata3(){
-      await fetch("http://localhost:3000/3")
-      .then( (response) => response.json())
-      .then(data => {
-            image1.textContent=data.flags;
-            county3.textContent=data.name;
-            pop2.textContent=data.population;
-            region2.textContent=data.region;
-            capital2.textContent=data.capital
-            console.log(data);
-      })
-      .catch(error=>console.log(error))
-  }
-  fetchdata3();
+// }
+// fetchdata();
