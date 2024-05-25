@@ -6,113 +6,38 @@
     <title>countries</title>
     <link rel="stylesheet" href="index.css">
 </head>
-<body class="body">
-    <div class="navbar">
+<body>
+    
+    <section class="navbar">
+      <div>
+            <h1>where in the world?</h1>
+        </div>
+        <div class="onoff">
+            <p> <img src="./images/download.png" alt="" id="offon" width="30px">dark mode</p>
+        </div>
+    
+    </section>
+
+    <section class="searching">
+        <div class="searchbar">
+            <input type="text" placeholder="search for a county">
+        </div>
         <div>
-        <h4>where in the world?</h4>
-         </div>
-        <p><img src="./images/download.png" alt="" width="20px" class="onoff"> Dark mode</p>
+            <select name="dropdown" id="">
+                <option value="">Filter By Region</option>
+                <option value="Africa">Africa</option>
+                <option value="America">America</option>
+                <option value="Asia">Asia</option>
+                <option value="Europe">Europe</option>
+                <option value="Ocenia">Ocenia</option>
+            </select>
+        </div>
+    </section>
+
+    <div class="countries">
+        
     </div>
-    <div class="back">
-        <div class="search">
-        <img src="./images/search.png" alt="" width="20px">
-        <input type="text" id="search" placeholder="search for a country">
-       </div>
-       <div class="filter">
-        <p>filter by region</p>
-       </div>
-    </div>
-    <div class="regions">
-        <div class="region1">
-            <div>
-                <img src="./images/download.png" alt="" class="image1">
-            </div>
-            <div>
-                <p id="country"></p>
-                <p id="population">population</p>
-                <p id="region">region</p>
-                <p id="capital">capital</p>
-            </div>
-        </div>
-        <div class="region1">
-            <div>
-                <img src="./images/download.png" alt="">
-            </div>
-            <div>
-                <p id="country1"></p>
-                <p id="population1">population</p>
-                <p id="region1">region</p>
-                <p id="capital1">capital</p>
-            </div>
-        </div>
-        <div class="region1">
-            <div>
-                <img src="./images/download.png" alt="" class="image1">
-            </div>
-            <div>
-                <p id="country3">Germany</p>
-                <p id="population2">population</p>
-                <p id="region2">region</p>
-                <p id="capital2">capital</p>
-            </div>
-        </div>
-        <div class="region1">
-            <div>
-                <img src="./images/download.png" alt="">
-            </div>
-            <div>
-                <p>Germany</p>
-                <p>population</p>
-                <p>region</p>
-                <p>capital</p>
-            </div>
-        </div>
-        <div class="region1">
-            <div>
-                <img src="./images/download.png" alt="">
-            </div>
-            <div>
-                <p>Germany</p>
-                <p>population</p>
-                <p>region</p>
-                <p>capital</p>
-            </div>
-        </div>
-        <div class="region1">
-            <div>
-                <img src="./images/download.png" alt="">
-            </div>
-            <div>
-                <p>Germany</p>
-                <p>population</p>
-                <p>region</p>
-                <p>capital</p>
-            </div>
-        </div>
-        <div class="region1">
-            <div>
-                <img src="./images/download.png" alt="">
-            </div>
-            <div>
-                <p>Germany</p>
-                <p>population</p>
-                <p>region</p>
-                <p>capital</p>
-            </div>
-        </div>
-        <div class="region1">
-            <div>
-                <img src="./images/download.png" alt="">
-            </div>
-            <div>
-                <p>Germany</p>
-                <p>population</p>
-                <p>region</p>
-                <p>capital</p>
-            </div>
-        </div>
        
-    </div>
     <script src="data.js"></script>
 </body>
 </html>
